@@ -13,10 +13,15 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_esc {
+        combo_do_quo {
             timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
+            key-positions = <14 15>;
+            bindings = <&kp DQT>;
+        };
+
+        combo_si_quo {
+            bindings = <&kp SINGLE_QUOTE>;
+            key-positions = <20 21>;
         };
     };
 
@@ -108,7 +113,7 @@
 &kp TAB          &kp Q           &kp W            &kp F               &kp P             &kp B          &kp J        &kp L             &kp U               &kp Y                 &kp SEMICOLON   &kp LEFT_BRACKET
 &last_workspace  &mt LEFT_ALT A  &mt LEFT_META R  &mt LEFT_CONTROL S  &mt LEFT_SHIFT T  &kp G          &kp M        &mt LEFT_SHIFT N  &mt LEFT_CONTROL E  &mt LEFT_GUI I        &mt LEFT_ALT O  &kp SQT
 &kp GRAVE        &kp Z           &kp X            &kp C               &kp D             &kp V          &kp K        &kp H             &kp COMMA           &kp DOT               &kp FSLH        &kp RIGHT_BRACKET
-                                 &command_center  &to 1               &lt 6 ESCAPE      &lt 5 SPACE    &lt 2 ENTER  &lt 3 BACKSPACE   &lt 4 DELETE        &kp NON_US_BACKSLASH
+                                 &command_center  &to 1               &lt 2 ESCAPE      &lt 3 SPACE    &lt 4 ENTER  &lt 5 BACKSPACE   &lt 6 DELETE        &kp NON_US_BACKSLASH
             >;
         };
 
@@ -117,52 +122,52 @@
 &kp TAB             &kp RU_CYRILLIC_SHORT_I      &kp RU_CYRILLIC_TSE             &kp RU_CYRILLIC_U                &kp RU_CYRILLIC_KA            &kp RU_CYRILLIC_IE    &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE           &kp RU_CYRILLIC_SHA              &kp RU_CYRILLIC_SHCHA         &kp RU_CYRILLIC_ZE            &kp RU_CYRILLIC_HA
 &last_workspace     &mt LEFT_ALT RU_CYRILLIC_EF  &mt LEFT_META RU_CYRILLIC_YERU  &mt LEFT_CONTROL RU_CYRILLIC_VE  &mt LEFT_SHIFT RU_CYRILLIC_A  &kp RU_CYRILLIC_PE    &kp RU_CYRILLIC_ER  &mt LEFT_SHIFT RU_CYRILLIC_O  &mt LEFT_CONTROL RU_CYRILLIC_EL  &mt LEFT_META RU_CYRILLIC_DE  &mt LEFT_ALT RU_CYRILLIC_ZHE  &kp RU_CYRILLIC_E
 &kp RU_CYRILLIC_IO  &kp RU_CYRILLIC_YA           &kp RU_CYRILLIC_CHE             &kp RU_CYRILLIC_ES               &kp RU_CYRILLIC_EM            &kp RU_CYRILLIC_I     &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN     &kp RU_CYRILLIC_BE               &kp RU_CYRILLIC_YU            &kp RU_DOT                    &kp RU_CYRILLIC_HARD_SIGN
-                                                 &command_center                 &to 0                            &lt 6 ESC                     &lt 5 SPACE           &lt 2 ENTER         &lt 3 BACKSPACE               &lt 4 DELETE                     &kp BACKSLASH
+                                                 &command_center                 &to 0                            &lt 2 ESC                     &lt 3 SPACE           &lt 4 ENTER         &lt 5 BACKSPACE               &lt 6 DELETE                     &kp BACKSLASH
             >;
         };
 
-        fun {
+        sys {
             bindings = <
-&trans  &kp F12  &kp F7  &kp F8  &kp F9  &kp PRINTSCREEN    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp F11  &kp F4  &kp F5  &kp F6  &kp SCROLLLOCK     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp F10  &kp F1  &kp F2  &kp F3  &kp PAUSE_BREAK    &trans  &trans  &trans  &trans  &trans  &trans
-                 &trans  &trans  &trans  &trans             &trans  &trans  &trans  &trans
+&bootloader  &trans  &trans  &trans  &trans  &trans    &trans       &bt BT_CLR    &bt BT_CLR_ALL  &trans        &trans        &bootloader
+&trans       &trans  &trans  &trans  &trans  &trans    &trans       &trans        &trans          &trans        &trans        &trans
+&sys_reset   &trans  &trans  &trans  &trans  &trans    &trans       &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &sys_reset
+                     &trans  &trans  &trans  &trans    &kp RU_SEMI  &kp RU_COLON  &trans          &trans
+            >;
+        };
+
+        nav {
+            bindings = <
+&trans  &trans        &trans        &trans     &trans          &trans    &redo       &paste        &copy          &cut          &undo      &trans
+&trans  &kp LEFT_WIN  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &trans    &kp CAPS    &kp LEFT      &kp DOWN       &kp UP_ARROW  &kp RIGHT  &trans
+&trans  &trans        &trans        &trans     &trans          &trans    &kp INSERT  &kp HOME      &kp PAGE_DOWN  &kp PG_UP     &kp END    &trans
+                      &trans        &trans     &trans          &trans    &kp KP_DOT  &kp KP_COMMA  &kp QUESTION   &trans
             >;
         };
 
         num {
             bindings = <
-&kp LEFT_PARENTHESIS   &kp MINUS   &kp N7        &kp N8        &kp N9        &kp PLUS        &trans  &trans           &trans     &trans    &trans         &trans
-&kp COMMA              &kp PERIOD  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp EQUAL       &trans  &kp RIGHT_SHIFT  &kp RCTRL  &kp LALT  &kp RIGHT_WIN  &trans
-&kp RIGHT_PARENTHESIS  &kp SLASH   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp ASTERISK    &trans  &trans           &trans     &trans    &trans         &trans
-                                   &kp N0        &trans        &trans        &kp SPACE       &trans  &trans           &trans     &trans
+&kp LEFT_PARENTHESIS   &kp MINUS  &kp N7        &kp N8        &kp N9        &kp PLUS        &trans  &trans           &trans     &trans    &trans         &trans
+&kp COMMA              &kp UNDER  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp EQUAL       &trans  &kp RIGHT_SHIFT  &kp RCTRL  &kp LALT  &kp RIGHT_WIN  &trans
+&kp RIGHT_PARENTHESIS  &kp SLASH  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp ASTERISK    &trans  &trans           &trans     &trans    &trans         &trans
+                                  &kp N0        &trans        &trans        &kp SPACE       &trans  &trans           &trans     &trans
             >;
         };
 
         sym {
             bindings = <
 &kp LEFT_BRACE   &kp MINUS  &kp AMPERSAND          &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp PLUS        &trans  &trans      &trans     &trans        &trans         &trans
-&kp COMMA        &kp DOT    &kp DOLLAR             &kp PERCENT   &kp CARET             &kp EQUAL       &trans  &kp RSHIFT  &kp RCTRL  &kp LEFT_ALT  &kp RIGHT_WIN  &trans
+&kp COLON        &kp SEMI   &kp DOLLAR             &kp PERCENT   &kp CARET             &kp EQUAL       &trans  &kp RSHIFT  &kp RCTRL  &kp LEFT_ALT  &kp RIGHT_WIN  &trans
 &kp RIGHT_BRACE  &kp SLASH  &kp EXCL               &kp AT_SIGN   &kp HASH              &kp ASTERISK    &trans  &trans      &trans     &trans        &trans         &trans
                             &kp RIGHT_PARENTHESIS  &kp GRAVE     &trans                &kp SPACE       &trans  &trans      &trans     &trans
             >;
         };
 
-        nav {
+        fun {
             bindings = <
-&trans  &trans        &trans        &trans     &trans          &trans    &redo       &paste    &copy          &cut          &undo      &trans
-&trans  &kp LEFT_WIN  &kp LEFT_ALT  &kp LCTRL  &kp LEFT_SHIFT  &trans    &kp CAPS    &kp LEFT  &kp DOWN       &kp UP_ARROW  &kp RIGHT  &trans
-&trans  &trans        &trans        &trans     &trans          &trans    &kp INSERT  &kp HOME  &kp PAGE_DOWN  &kp PG_UP     &kp END    &trans
-                      &trans        &trans     &trans          &trans    &trans      &trans    &trans         &trans
-            >;
-        };
-
-        sys {
-            bindings = <
-&bootloader  &trans  &trans  &trans  &trans  &trans    &trans  &bt BT_CLR    &bt BT_CLR_ALL  &trans        &trans        &bootloader
-&trans       &trans  &trans  &trans  &trans  &trans    &trans  &trans        &trans          &trans        &trans        &trans
-&sys_reset   &trans  &trans  &trans  &trans  &trans    &trans  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &sys_reset
-                     &trans  &trans  &trans  &trans    &trans  &trans        &trans          &trans
+&kp LEFT_BRACKET   &kp F12  &kp F7  &kp F8  &kp F9  &kp PRINTSCREEN    &trans  &trans  &trans  &trans  &trans  &trans
+&trans             &kp F11  &kp F4  &kp F5  &kp F6  &kp SCROLLLOCK     &trans  &trans  &trans  &trans  &trans  &trans
+&kp RIGHT_BRACKET  &kp F10  &kp F1  &kp F2  &kp F3  &kp PAUSE_BREAK    &trans  &trans  &trans  &trans  &trans  &trans
+                            &trans  &trans  &trans  &trans             &trans  &trans  &trans  &trans
             >;
         };
     };
