@@ -84,6 +84,20 @@
             bindings = <&kp LC(V)>;
             label = "PASTE";
         };
+
+        last_workspace: last_workspace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LA(D))>;
+            label = "LAST_WORKSPACE";
+        };
+
+        command_center: command_center {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(D)>;
+            label = "COMMAND_CENTER";
+        };
     };
 
     keymap {
@@ -91,10 +105,19 @@
 
         def {
             bindings = <
-&kp TAB       &kp Q           &kp W             &kp F               &kp P             &kp B          &kp J        &kp L             &kp U               &kp Y                 &kp SEMICOLON   &kp LEFT_BRACKET
-&kt CAPSLOCK  &mt LEFT_ALT A  &mt LEFT_META R   &mt LEFT_CONTROL S  &mt LEFT_SHIFT T  &kp G          &kp M        &mt LEFT_SHIFT N  &mt LEFT_CONTROL E  &mt LEFT_GUI I        &mt LEFT_ALT O  &kp SQT
-&kp GRAVE     &kp Z           &kp X             &kp C               &kp D             &kp V          &kp K        &kp H             &kp COMMA           &kp DOT               &kp FSLH        &kp RIGHT_BRACKET
-                              &kp LEFT_BRACKET  &lt 6 PRINTSCREEN   &lt 5 ESCAPE      &lt 4 SPACE    &lt 1 ENTER  &lt 2 BACKSPACE   &lt 3 DELETE        &kp NON_US_BACKSLASH
+&kp TAB          &kp Q           &kp W            &kp F               &kp P             &kp B          &kp J        &kp L             &kp U               &kp Y                 &kp SEMICOLON   &kp LEFT_BRACKET
+&last_workspace  &mt LEFT_ALT A  &mt LEFT_META R  &mt LEFT_CONTROL S  &mt LEFT_SHIFT T  &kp G          &kp M        &mt LEFT_SHIFT N  &mt LEFT_CONTROL E  &mt LEFT_GUI I        &mt LEFT_ALT O  &kp SQT
+&kp GRAVE        &kp Z           &kp X            &kp C               &kp D             &kp V          &kp K        &kp H             &kp COMMA           &kp DOT               &kp FSLH        &kp RIGHT_BRACKET
+                                 &command_center  &to 1               &lt 6 ESCAPE      &lt 5 SPACE    &lt 2 ENTER  &lt 3 BACKSPACE   &lt 4 DELETE        &kp NON_US_BACKSLASH
+            >;
+        };
+
+        russian {
+            bindings = <
+&kp TAB             &kp RU_CYRILLIC_SHORT_I      &kp RU_CYRILLIC_TSE             &kp RU_CYRILLIC_U                &kp RU_CYRILLIC_KA            &kp RU_CYRILLIC_IE    &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE           &kp RU_CYRILLIC_SHA              &kp RU_CYRILLIC_SHCHA         &kp RU_CYRILLIC_ZE            &kp RU_CYRILLIC_HA
+&last_workspace     &mt LEFT_ALT RU_CYRILLIC_EF  &mt LEFT_META RU_CYRILLIC_YERU  &mt LEFT_CONTROL RU_CYRILLIC_VE  &mt LEFT_SHIFT RU_CYRILLIC_A  &kp RU_CYRILLIC_PE    &kp RU_CYRILLIC_ER  &mt LEFT_SHIFT RU_CYRILLIC_O  &mt LEFT_CONTROL RU_CYRILLIC_EL  &mt LEFT_META RU_CYRILLIC_DE  &mt LEFT_ALT RU_CYRILLIC_ZHE  &kp RU_CYRILLIC_E
+&kp RU_CYRILLIC_IO  &kp RU_CYRILLIC_YA           &kp RU_CYRILLIC_CHE             &kp RU_CYRILLIC_ES               &kp RU_CYRILLIC_EM            &kp RU_CYRILLIC_I     &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN     &kp RU_CYRILLIC_BE               &kp RU_CYRILLIC_YU            &kp RU_DOT                    &kp RU_CYRILLIC_HARD_SIGN
+                                                 &command_center                 &to 0                            &lt 6 ESC                     &lt 5 SPACE           &lt 2 ENTER         &lt 3 BACKSPACE               &lt 4 DELETE                     &kp BACKSLASH
             >;
         };
 
@@ -140,24 +163,6 @@
 &trans       &trans  &trans  &trans  &trans  &trans    &trans  &trans        &trans          &trans        &trans        &trans
 &sys_reset   &trans  &trans  &trans  &trans  &trans    &trans  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &sys_reset
                      &trans  &trans  &trans  &trans    &trans  &trans        &trans          &trans
-            >;
-        };
-
-        languages_select {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans    &trans  &to 0   &to 7   &trans
-            >;
-        };
-
-        russian {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
             >;
         };
     };
