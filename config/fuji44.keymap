@@ -144,7 +144,7 @@
 &trans  &kp Q           &kp W            &kp F               &kp P             &kp B          &kp J        &kp L             &kp U               &kp Y                 &kp SEMICOLON   &trans
 &trans  &mt LEFT_ALT A  &mt LEFT_META R  &mt LEFT_CONTROL S  &mt LEFT_SHIFT T  &kp G          &kp M        &mt LEFT_SHIFT N  &mt LEFT_CONTROL E  &mt LEFT_GUI I        &mt LEFT_ALT O  &trans
 &trans  &kp Z           &kp X            &kp C               &kp D             &kp V          &kp K        &kp H             &kp COMMA           &kp DOT               &kp FSLH        &trans
-                        &to 1            &lt 2 TAB           &lt 3 ESCAPE      &lt 4 SPACE    &lt 5 ENTER  &lt 6 BACKSPACE   &lt 7 DELETE        &kp NON_US_BACKSLASH
+                        &trans           &lt 2 TAB           &lt 3 ESCAPE      &lt 4 SPACE    &lt 5 ENTER  &lt 6 BACKSPACE   &lt 7 DELETE        &kp NON_US_BACKSLASH
             >;
         };
 
@@ -153,7 +153,7 @@
 &trans  &kp RU_CYRILLIC_SHORT_I      &kp RU_CYRILLIC_TSE             &kp RU_CYRILLIC_U                &kp RU_CYRILLIC_KA            &kp RU_CYRILLIC_IE    &kp RU_CYRILLIC_EN  &kp RU_CYRILLIC_GHE           &kp RU_CYRILLIC_SHA              &kp RU_CYRILLIC_SHCHA         &kp RU_CYRILLIC_ZE            &trans
 &trans  &mt LEFT_ALT RU_CYRILLIC_EF  &mt LEFT_META RU_CYRILLIC_YERU  &mt LEFT_CONTROL RU_CYRILLIC_VE  &mt LEFT_SHIFT RU_CYRILLIC_A  &kp RU_CYRILLIC_PE    &kp RU_CYRILLIC_ER  &mt LEFT_SHIFT RU_CYRILLIC_O  &mt LEFT_CONTROL RU_CYRILLIC_EL  &mt LEFT_META RU_CYRILLIC_DE  &mt LEFT_ALT RU_CYRILLIC_ZHE  &trans
 &trans  &kp RU_CYRILLIC_YA           &kp RU_CYRILLIC_CHE             &kp RU_CYRILLIC_ES               &kp RU_CYRILLIC_EM            &kp RU_CYRILLIC_I     &kp RU_CYRILLIC_TE  &kp RU_CYRILLIC_SOFT_SIGN     &kp RU_CYRILLIC_BE               &kp RU_CYRILLIC_YU            &kp RU_CYRILLIC_E             &trans
-                                     &to 0                           &lt 2 TAB                        &lt 3 ESC                     &lt 4 SPACE           &lt 5 ENTER         &lt 6 BACKSPACE               &lt 7 DELETE                     &kp RU_CYRILLIC_HA
+                                     &kp RU_CYRILLIC_HARD_SIGN       &lt 2 TAB                        &lt 3 ESC                     &lt 4 SPACE           &lt 5 ENTER         &lt 6 BACKSPACE               &lt 7 DELETE                     &kp RU_CYRILLIC_HA
             >;
         };
 
@@ -168,19 +168,19 @@
 
         sys {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &bootloader    &bootloader      &bt BT_CLR      &bt BT_CLR_ALL  &trans        &trans        &trans
-&trans  &trans  &trans  &trans  &trans  &trans         &kp PAUSE_BREAK  &kp C_PREVIOUS  &kp C_VOL_DN    &kp C_VOL_UP  &kp C_NEXT    &trans
-&trans  &trans  &trans  &trans  &trans  &sys_reset     &sys_reset       &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &trans
-                &trans  &trans  &trans  &trans         &trans           &trans          &trans          &trans
+&trans  &trans  &trans  &trans  &trans  &kp RU_CYRILLIC_IO    &bootloader      &bt BT_CLR      &bt BT_CLR_ALL  &trans        &trans        &trans
+&trans  &trans  &trans  &to 1   &to 0   &trans                &kp PAUSE_BREAK  &kp C_PREVIOUS  &kp C_VOL_DN    &kp C_VOL_UP  &kp C_NEXT    &trans
+&trans  &trans  &trans  &trans  &trans  &trans                &sys_reset       &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &trans
+                &trans  &trans  &trans  &trans                &trans           &trans          &trans          &trans
             >;
         };
 
         nav {
             bindings = <
-&trans  &trans        &trans        &trans     &trans          &kp RU_CYRILLIC_IO    &redo       &paste        &copy          &cut          &undo      &trans
-&trans  &kp LEFT_ALT  &kp LEFT_GUI  &kp LCTRL  &kp LEFT_SHIFT  &trans                &kp CAPS    &kp LEFT      &kp DOWN       &kp UP_ARROW  &kp RIGHT  &trans
-&trans  &trans        &trans        &trans     &trans          &trans                &kp INSERT  &kp HOME      &kp PAGE_DOWN  &kp PG_UP     &kp END    &trans
-                      &trans        &trans     &trans          &trans                &kp KP_DOT  &kp KP_COMMA  &kp QUESTION   &trans
+&trans  &undo         &cut          &copy      &paste          &redo     &redo       &paste        &copy          &cut          &undo      &trans
+&trans  &kp LEFT_ALT  &kp LEFT_GUI  &kp LCTRL  &kp LEFT_SHIFT  &trans    &kp CAPS    &kp LEFT      &kp DOWN       &kp UP_ARROW  &kp RIGHT  &trans
+&trans  &trans        &trans        &trans     &trans          &trans    &kp INSERT  &kp HOME      &kp PAGE_DOWN  &kp PG_UP     &kp END    &trans
+                      &trans        &trans     &trans          &trans    &kp KP_DOT  &kp KP_COMMA  &kp QUESTION   &trans
             >;
         };
 
